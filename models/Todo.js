@@ -24,4 +24,7 @@ const TodoSchema = new Schema({
   }
 });
 
+// Add indexing for faster queries
+TodoSchema.index({ title: 1, user: 1 });
+
 mongoose.model('todos', TodoSchema);
